@@ -1,0 +1,16 @@
+
+
+span.inline {
+  border: solid green;
+  width: 500px;
+  padding: 50px;
+
+}
+
+p.block {
+  /* display: inline; */
+  border: solid red;
+  width: 500px;
+  padding: 50px;
+  margin: 50px;
+}
