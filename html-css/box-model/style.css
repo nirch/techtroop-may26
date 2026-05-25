@@ -1,0 +1,13 @@
+
+* {
+  box-sizing: border-box;
+}
+
+
+.box-model p {
+  background-color: lightgray;
+  border: 10px solid green;
+  width: 300px;
+  padding: 20px;
+  margin: 50px;
+}
