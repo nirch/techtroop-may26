@@ -1,0 +1,35 @@
+
+div.static {
+  position: static; /* It is redundant because this is the default */
+  border: solid red;
+}
+
+div.relative {
+  /* padding: 20px; */
+  position: relative;
+  top: 10px;
+  border: solid blue;
+}
+
+div.fixed {
+  position: fixed;
+  border: solid green;
+  top: 0;
+  background-color: white;
+}
+
+
+div.parent {
+  position: relative;
+  height: 400px;
+  width: 50%;
+  border: solid purple;
+}
+
+
+div.absolute {
+  position: absolute;
+  border: solid orange;
+  top: 0;
+  right: 0;
+}
