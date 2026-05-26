@@ -1,3 +1,7 @@
+body {
+  margin-bottom: 500px;
+}
+
 
 .flex-container {
   display: flex;
@@ -35,3 +39,24 @@
   height: 100px;
   align-items: flex-start;
 }
+
+.example-6 > .flex-container {
+  /* flex-wrap: wrap; */
+}
+
+.example-6 > .flex-container > * {
+  width: 40%;
+}
+
+.example-7 > .flex-container > * {
+  flex-grow: 1;
+  /* flex: 1; */
+}
+
+/* .example-7 > .flex-container > div:hover {
+  flex-grow: 1;
+} */
+
+/* .example-7 > .flex-container > div:last-child {
+  flex-grow: 1;
+} */
