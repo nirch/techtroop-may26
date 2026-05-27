@@ -1,0 +1,28 @@
+
+
+
+div {
+  width: 300px;
+  height: 150px;
+  border: solid;
+}
+
+
+/* Mobile First (no media queries) up to 600px */
+div {
+  background-color: yellow;
+}
+
+/* Tablet 601px to 900px */
+@media (min-width: 601px) {
+  div {
+    background-color: pink;
+  }
+}
+
+/* Desktop 901px and above */
+@media (min-width: 901px) {
+  div {
+    background-color: cyan;
+  }
+}
