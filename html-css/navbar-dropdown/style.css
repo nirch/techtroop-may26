@@ -1,0 +1,77 @@
+/* Add your styles here */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+}
+
+.row {
+  display: flex;
+}
+
+.col-1 {
+  flex: 1;
+}
+
+.col-3 {
+  flex: 3;
+}
+
+main {
+  padding: 10px;
+}
+
+nav {
+  background-color: rgb(241, 241, 241);
+}
+
+nav > ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav > ul > li > a, .dropdown-content > a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+nav > ul > li > a:hover, .dropdown-content > a:hover  {
+   background-color: rgb(85, 85, 85);
+   color: white;
+} 
+
+nav > ul > li.active > a {
+  background-color: rgb(0, 169, 112);
+  color: white
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: rgb(241, 241, 241);
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: max-content;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+}
+
+.dropdown:hover > .dropdown-content {
+  display: block;
+}
+
+.dropdown > a::after {
+  content: ">";
+  float: right;
+}
+
+
+
