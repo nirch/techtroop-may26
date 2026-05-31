@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  border: solid black;
+  height: 100%;
+}
+
+header {
+  border: solid black;
+  height: 50px;
+}
+
+section {
+  border: solid black;
+  height: 150px;
+  background-color: lightgray;
+}
+
+footer {
+  border: solid black;
+  height: 50px;
+  background-color: navy;
+}
