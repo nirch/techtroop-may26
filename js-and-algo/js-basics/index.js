@@ -93,3 +93,12 @@ person.height = 180;
 
 
 console.log("EOF");
+
+
+let arr = [2, 4, 54, -1];
+console.log(arr[0]);                // 2
+console.log(arr[arr.length - 1]);   // -1 
+console.log(arr[-1]);               // -1 
+
+arr.push(10);
+console.log(arr);
