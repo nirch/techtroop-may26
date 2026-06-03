@@ -86,3 +86,19 @@ const oldNames = people
   });
 
 console.log(oldNames);
+
+
+
+// Sum numArr
+
+let sum = 0;
+for (const num of numArr) {
+  sum += num;
+}
+console.log(sum);
+
+const sumReduce = numArr.reduce(function(sum, num) {
+  return sum + num;
+}, 0);
+console.log(sumReduce);
+

@@ -116,3 +116,19 @@ const obj = {
     console.log('arrow: ' + this.name);         // undefined
   }
 }
+
+
+
+// Sum numArr
+
+let sum = 0;
+for (const num of numArr) {
+  sum += num;
+}
+console.log(sum);
+
+const sumReduce = numArr.reduce((sum, num) => sum + num, 0);
+console.log(sumReduce);
+
+
+
