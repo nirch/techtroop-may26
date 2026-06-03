@@ -101,4 +101,3 @@ const sumReduce = numArr.reduce(function(sum, num) {
   return sum + num;
 }, 0);
 console.log(sumReduce);
-
