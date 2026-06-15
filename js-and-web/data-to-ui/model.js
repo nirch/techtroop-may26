@@ -2,17 +2,17 @@ const shoppingList = [
   {
     id: "111",
     name: "Milk",
-    picked: false
+    completed: false
   },
   {
     id: "222",
     name: "Honey",
-    picked: false
+    completed: true
   },
   {
     id: "333",
     name: "Bread",
-    picked: true
+    completed: false
   },
 ]
 
@@ -23,7 +23,12 @@ export function getList() {
 
 export function addItem(itemName) {
   shoppingList.push({
+    id: randomId(),
     name: itemName,
-    picked: false
+    completed: false
   })
+}
+
+function randomId() {
+  return new Date().getMilliseconds();
 }

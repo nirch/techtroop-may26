@@ -1,6 +1,6 @@
 import { getList, addItem } from "./model.js";
 
-// UI - presentation logic
+// UI - presentation logic - translates data to UI
 function refreshShoppingList(shoppingList) {
   const ul = document.querySelector("#shoppingList");
 
@@ -11,6 +11,17 @@ function refreshShoppingList(shoppingList) {
   for (const item of shoppingList) {
     const li = document.createElement("li");
     li.textContent = item.name;
+    // li.setAttribute("data-id", item.id);
+    if (item.completed) {
+      li.classList.add("completed");
+    }
+
+    li.addEventListener("click", () => {
+      // this better be a function that updates the model toggleItem(item)
+      item.completed = !item.completed;
+      refreshShoppingList(getList());
+    })
+
     ul.appendChild(li);
   }
 }
@@ -27,4 +38,10 @@ addEventListener("DOMContentLoaded", () => {
     refreshShoppingList(getList());
     input.value = "";
   });
+
+  // ul.children.addEventListener('click', (event) => {
+  //     const li = event.target;
+  //     const id = li.getAttribute("data-id");
+  //     // item.completed = !item.completed;
+  // });
 });
