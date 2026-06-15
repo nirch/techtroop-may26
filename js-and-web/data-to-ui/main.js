@@ -30,7 +30,8 @@ function refreshShoppingList(shoppingList) {
 addEventListener("DOMContentLoaded", () => {
   refreshShoppingList(getList());
 
-  document.querySelector("#btnAdd").addEventListener("click", () => {
+  document.querySelector("#btnAdd").addEventListener("click", (e) => {
+    e.preventDefault();
     const input = document.querySelector("#inputNew");
     const newItemValue = input.value;
     // validate new item...

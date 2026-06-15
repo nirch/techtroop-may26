@@ -35,7 +35,10 @@ addEventListener("DOMContentLoaded", () => {
   //   document.querySelector("#my-p").classList.toggle("yellow");
   // }
   
-  document.querySelector("#btnToggle").addEventListener("click", () => {
+  document.querySelector("#btnToggle").addEventListener("click", (e) => {
+    console.log(e.type);
+    console.log(e.target);      // Element object that fired the event
+    console.log(e.target.textContent);  
     document.querySelector("#my-p").classList.toggle("yellow");
   })
 });
