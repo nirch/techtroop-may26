@@ -16,7 +16,7 @@
 async function getNumberOfBreeds() {
   const response = await axios.get("https://dog.ceo/api/breeds/list/all");
   const numOfBreeds = Object.keys(response.data.message).length;
-  return numOfBreeds;
+  return numOfBreeds;   // this resolves the promise
 }
 
 
