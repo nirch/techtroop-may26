@@ -33,5 +33,11 @@ https://codesandbox.io/p/sandbox/xf347j
 ## Input (Controlled Components)
 https://codesandbox.io/p/sandbox/69vj76
 
+## useEffect Basics
+https://codesandbox.io/p/sandbox/4vykwm
 
+## RandomColorBox (useEffect cleanup)
+https://codesandbox.io/p/sandbox/mwrqqx
 
+## useEffect - API Calls
+https://codesandbox.io/p/sandbox/useeffect-apis-basics-rj4k3h
