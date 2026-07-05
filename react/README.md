@@ -44,3 +44,15 @@ https://codesandbox.io/p/sandbox/useeffect-apis-basics-rj4k3h
 
 ## React Router Basics
 https://codesandbox.io/p/sandbox/wx3hzv
+
+## Prop Drilling - Problem
+https://codesandbox.io/p/sandbox/j84htw
+
+## Prop Drilling - Context Solution
+https://codesandbox.io/p/devbox/prop-drilling-problem-forked-ctmrpw?workspaceId=ws_GCFXAAkRLVPjMK4aqTRmLH
+
+## React Todos - useState
+https://codesandbox.io/p/sandbox/vmjtsj
+
+## React Todos - Simple State Management (Context + useReducer)
+https://codesandbox.io/p/devbox/prop-drilling-problem-forked-ctmrpw?workspaceId=ws_GCFXAAkRLVPjMK4aqTRmLH
