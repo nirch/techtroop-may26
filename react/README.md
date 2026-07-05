@@ -55,4 +55,4 @@ https://codesandbox.io/p/devbox/prop-drilling-problem-forked-ctmrpw?workspaceId=
 https://codesandbox.io/p/sandbox/vmjtsj
 
 ## React Todos - Simple State Management (Context + useReducer)
-https://codesandbox.io/p/devbox/prop-drilling-problem-forked-ctmrpw?workspaceId=ws_GCFXAAkRLVPjMK4aqTRmLH
+https://codesandbox.io/p/sandbox/react-todos-simple-state-management-context-usereducer-wn564x
