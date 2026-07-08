@@ -59,3 +59,6 @@ https://codesandbox.io/p/sandbox/react-todos-simple-state-management-context-use
 
 ## MobX (React Todos)
 https://codesandbox.io/p/devbox/react-todos-usestate-forked-5qfljr?workspaceId=ws_GCFXAAkRLVPjMK4aqTRmLH
+
+## Render Optimization (React.memo, useMemo, useCallback)
+https://stackblitz.com/edit/react-wyvaycqm
