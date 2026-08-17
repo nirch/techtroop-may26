@@ -1,27 +1,17 @@
 const express = require("express");
+const { Queue } = require("bullmq");
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 
-// Simulates generating a PDF invoice — slow and CPU-heavy in real life
-async function generateInvoicePDF(order) {
-  console.log(`[invoice] Generating PDF for order ${order.id}...`);
-  await sleep(3000); // pretend this takes 3 seconds
-  console.log(`[invoice] PDF ready for order ${order.id}`);
-}
-
-// Simulates sending the invoice by email
-async function sendInvoiceEmail(order) {
-  console.log(`[email] Sending invoice email to ${order.email}...`);
-  await sleep(2000); // pretend this takes 2 seconds
-  console.log(`[email] Email sent for order ${order.id}`);
-}
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+// --- BullMQ Queue ---
+// A Queue is the "inbox" — the server drops jobs in here and moves on.
+// Redis is the backbone: it stores the jobs so they survive restarts.
+const invoiceQueue = new Queue("invoices", {
+  connection: { host: "localhost", port: 6379 },
+});
 
 // POST /orders
 // Problem: the handler does ALL the work before responding.
@@ -37,11 +27,11 @@ app.post("/orders", async (req, res) => {
 
   console.log(`\n[order] New order received: #${order.id}`);
 
-  await generateInvoicePDF(order);
-  await sendInvoiceEmail(order);
+  // Add the job to the queue — this takes ~1ms
+  await invoiceQueue.add("generate-invoice", order);
 
   res.json({
-    message: "Order confirmed",
+    message: "Order confirmed! Your invoice will be emailed shortly.",
     orderId: order.id,
   });
 });

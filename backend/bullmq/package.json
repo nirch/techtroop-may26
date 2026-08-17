@@ -1,8 +1,10 @@
 {
    "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+      "start": "node index.js"
+   },
+   "dependencies": {
+      "bullmq": "^6.1.2",
+      "express": "^5.2.1",
+      "ioredis": "^6.0.0"
+   }
 }
