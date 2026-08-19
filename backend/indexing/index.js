@@ -19,6 +19,39 @@ async function run() {
     .toArray();
   console.log(`Query 1 - find by year:       ${Date.now() - t}ms  (${byYear.length} results)`);
 
+  // EXPLAIN
+  console.log("\n==== EXPLAIN (before index) ====\n");
+
+  const explainBefore = await movies.find({year: 1994}).explain("executionStats");
+  
+  const statsBefore = explainBefore.executionStats;
+  console.log("Query: find({ year: 1994 })");
+  console.log(`  docsExamined : ${statsBefore.totalDocsExamined}`);  // scanned every movie
+  console.log(`  docsReturned : ${statsBefore.nReturned}`);  // only needed these
+  console.log(`  executionTime: ${statsBefore.executionTimeMillis}ms`);
+  console.log(`  winningPlan  : ${statsBefore.executionStages.stage}`); // COLLSCAN
+  console.log();
+
+
+  console.log("\n==== CREATING INDEX ====\n");
+  // in a relational db we do it with migrations
+  await movies.createIndex({year: 1});
+
+  
+
+  // EXPLAIN
+  console.log("\n==== EXPLAIN (after index) ====\n");
+
+  const explainAfter = await movies.find({year: 1994}).explain("executionStats");
+  
+  const statsAfter = explainAfter.executionStats;
+  console.log("Query: find({ year: 1994 })");
+  console.log(`  docsExamined : ${statsAfter.totalDocsExamined}`);  // scanned every movie
+  console.log(`  docsReturned : ${statsAfter.nReturned}`);  // only needed these
+  console.log(`  executionTime: ${statsAfter.executionTimeMillis}ms`);
+  console.log(`  winningPlan  : ${statsAfter.executionStages.stage}`); // 
+  console.log();
+
 
   await client.close();
 }
